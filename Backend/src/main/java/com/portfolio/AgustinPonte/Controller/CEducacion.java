@@ -32,13 +32,14 @@ public class CEducacion {
     @Autowired
     SEducacion sEducacion;
     
-    @PreAuthorize("hasRole('ADMIN')")
+    
     @GetMapping("/lista")
     public ResponseEntity<List<Educacion>> list(){
         List<Educacion> list = sEducacion.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/detail/{id}")
     public ResponseEntity<Educacion> getById(@PathVariable("id")int id){
         if(!sEducacion.existsById(id)){
