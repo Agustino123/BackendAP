@@ -32,6 +32,7 @@ public class CEducacion {
     @Autowired
     SEducacion sEducacion;
     
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/lista")
     public ResponseEntity<List<Educacion>> list(){
         List<Educacion> list = sEducacion.list();
