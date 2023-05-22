@@ -27,7 +27,7 @@ public class ImpPersonaService {
          return ipersonaRepository.findById(id);
      }
      
-     public Optional<Persona> getByNombre(String nombre){
+       public Optional<Persona> getByNombre(String nombre){
          return ipersonaRepository.findByNombre(nombre);
      }
      
@@ -43,7 +43,7 @@ public class ImpPersonaService {
          return ipersonaRepository.existsById(id);
      }
      
-     public boolean existsByNombre(String nombre){
+       public boolean existsByNombre(String nombre){
          return ipersonaRepository.existsByNombre(nombre);
      }
 }
